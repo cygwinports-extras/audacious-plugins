@@ -1,0 +1,27 @@
+
+HOMEPAGE="http://audacious-media-player.org/"
+SRC_URI="http://distfiles.atheme.org/${P}.tbz2"
+
+NO_AUTOPOINT=1
+NO_ACLOCAL=1
+
+src_compile() {
+	cd ${S}
+	cygautoreconf
+	lndirs
+	cd ${B}
+	cygconf \
+		--disable-alsa \
+		--disable-amidiplug \
+		--disable-coreaudio \
+		--disable-dockalbumart \
+		--disable-mtp_up \
+		--disable-pulse
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	dodir /usr/{bin,include,lib}
+	cyginstall
+}
