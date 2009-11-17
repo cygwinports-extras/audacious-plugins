@@ -1,0 +1,36 @@
+--- origsrc/audacious-plugins-2.1/src/adplug/Makefile	2009-07-06 17:40:36.000000000 -0500
++++ src/audacious-plugins-2.1/src/adplug/Makefile	2009-11-16 22:39:33.317300900 -0600
+@@ -57,6 +57,7 @@ include ../../extra.mk
+ 
+ plugindir := ${plugindir}/${INPUT_PLUGIN_DIR}
+ 
++LD = ${CXX}
+ CFLAGS += ${PLUGIN_CFLAGS}
+ CXXFLAGS += ${PLUGIN_CFLAGS}
+ CPPFLAGS += ${PLUGIN_CPPFLAGS} ${MOWGLI_CFLAGS} ${GTK_CFLAGS} ${GLIB_CFLAGS}  ${BINIO_CFLAGS} -I../.. -I./core -Dstricmp=strcasecmp
+--- origsrc/audacious-plugins-2.1/src/gtkui/Makefile	2009-07-06 17:40:36.000000000 -0500
++++ src/audacious-plugins-2.1/src/gtkui/Makefile	2009-11-16 21:27:04.792258700 -0600
+@@ -14,4 +14,4 @@ plugindir := ${plugindir}/${GENERAL_PLUG
+ 
+ CFLAGS += ${PLUGIN_CFLAGS} ${BEEP_DEFINES}
+ CPPFLAGS += ${PLUGIN_CPPFLAGS} ${MOWGLI_CFLAGS}  ${GTK_CFLAGS} ${GLIB_CFLAGS} ${PANGO_CFLAGS} ${CAIRO_CFLAGS} ${PANGOCAIRO_CFLAGS} ${XRENDER_CFLAGS} ${XCOMPOSITE_CFLAGS} -I../..
+-LIBS += ${GTK_LIBS} ${GLIB_LIBS} ${PANGO_LIBS} ${CAIRO_LIBS} ${PANGOCAIRO_LIBS} ${XRENDER_LIBS} ${XCOMPOSITE_LIBS} ${MOWGLI_LIBS}
++LIBS += ${GTK_LIBS} ${GLIB_LIBS} ${PANGO_LIBS} ${CAIRO_LIBS} ${PANGOCAIRO_LIBS} ${XRENDER_LIBS} ${XCOMPOSITE_LIBS} ${MOWGLI_LIBS} -laudcore
+--- origsrc/audacious-plugins-2.1/src/musepack/Makefile	2009-07-06 17:40:36.000000000 -0500
++++ src/audacious-plugins-2.1/src/musepack/Makefile	2009-11-16 21:27:04.792258700 -0600
+@@ -7,6 +7,7 @@ include ../../extra.mk
+ 
+ plugindir := ${plugindir}/${INPUT_PLUGIN_DIR}
+ 
++LD = ${CXX}
+ CXXFLAGS += ${PLUGIN_CFLAGS}
+ CPPFLAGS += ${PLUGIN_CPPFLAGS} ${MOWGLI_CFLAGS}  ${GTK_CFLAGS} ${GLIB_CFLAGS}  ${TAGLIB_CFLAGS} -I../..
+ LIBS += ${TAGLIB_LIBS} ${GTK_LIBS} ${GLIB_LIBS}  ${MOWGLI_LIBS} -lmpcdec
+--- origsrc/audacious-plugins-2.1/src/projectm-1.0/Makefile	2009-07-06 17:40:36.000000000 -0500
++++ src/audacious-plugins-2.1/src/projectm-1.0/Makefile	2009-11-16 21:27:04.807858700 -0600
+@@ -14,4 +14,4 @@ LD = ${CXX}
+ CFLAGS += ${PLUGIN_CFLAGS}
+ CXXFLAGS += ${PLUGIN_CFLAGS}
+ CPPFLAGS += ${PLUGIN_CPPFLAGS} ${MOWGLI_CFLAGS} ${DBUS_CFLAGS} ${GTK_CFLAGS} ${GLIB_CFLAGS} ${PANGO_CFLAGS} ${ARCH_DEFINES} ${XML_CPPFLAGS} ${SDL_CFLAGS} ${LIBPROJECTM1_CFLAGS} -I../../intl -I../..
+-LIBS += ${GTK_LIBS} ${GLIB_LIBS} ${PANGO_LIBS} ${SDL_LIBS} ${LIBPROJECTM1_LIBS}
++LIBS += ${GTK_LIBS} ${GLIB_LIBS} ${PANGO_LIBS} ${SDL_LIBS} ${LIBPROJECTM1_LIBS} -lGL
