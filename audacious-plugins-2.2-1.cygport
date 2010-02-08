@@ -2,7 +2,7 @@ DESCRIPTION="Plugins for Audacious music player"
 HOMEPAGE="http://audacious-media-player.org/"
 SRC_URI="http://distfiles.atheme.org/${P}.tgz"
 PATCH_URI="2.1-buildsys.patch
-           2.1-no-undefined.patch"
+           2.2-no-undefined.patch"
 
 NO_AUTOPOINT=1
 NO_ACLOCAL=1
