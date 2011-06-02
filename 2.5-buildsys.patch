@@ -1,17 +1,6 @@
---- origsrc/audacious-plugins-2.4.3/configure.ac	2011-01-12 05:13:26.000000000 -0600
-+++ src/audacious-plugins-2.4.3/configure.ac	2011-02-03 02:29:33.727548100 -0600
-@@ -210,7 +210,7 @@ dnl ========================
- 
- BUILDSYS_SHARED_LIB
- BUILDSYS_PROG_IMPLIB
--test "x$PROG_IMPLIB_NEEDED" = "xyes" && LIBS="$LIBS -L\${libdir} -laudacious.exe"
-+test "x$PROG_IMPLIB_NEEDED" = "xyes" && LIBS="$LIBS -L\${libdir} -laudacious2.exe"
- 
- AC_MSG_CHECKING([if you are running Apple-GCC])
- case "$target" in
---- origsrc/audacious-plugins-2.4.3/m4/buildsys.m4	2011-01-12 05:13:26.000000000 -0600
-+++ src/audacious-plugins-2.4.3/m4/buildsys.m4	2011-02-03 02:32:45.419420500 -0600
-@@ -101,7 +101,23 @@ AC_DEFUN([BUILDSYS_SHARED_LIB], [
+--- origsrc/audacious-plugins-2.5.1/m4/buildsys.m4	2011-05-19 13:10:36.000000000 -0500
++++ src/audacious-plugins-2.5.1/m4/buildsys.m4	2011-06-02 01:00:27.851806700 -0500
+@@ -133,7 +133,23 @@ AC_DEFUN([BUILDSYS_SHARED_LIB], [
  			UNINSTALL_LIB='rm -f ${DESTDIR}${libdir}/$$i'
  			CLEAN_LIB=''
  			;;
@@ -34,5 +23,5 @@
 +			;;
 +		mingw*)
  			AC_MSG_RESULT(Win32)
- 			LIB_CPPFLAGS='-DPIC'
  			LIB_CFLAGS=''
+ 			LIB_LDFLAGS='-shared -Wl,--out-implib,${LIB}.a'
