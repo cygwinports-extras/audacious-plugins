@@ -1,9 +1,8 @@
 DESCRIPTION="Plugins for Audacious music player"
 HOMEPAGE="http://audacious-media-player.org/"
-SRC_URI="http://distfiles.atheme.org/${P}.tgz"
+SRC_URI="http://distfiles.atheme.org/${P}.tar.bz2"
 
-PATCH_URI="2.5-buildsys.patch
-           2.4-no-undefined.patch"
+PATCH_URI="2.5-buildsys.patch"
 
 NO_AUTOPOINT=1
 NO_ACLOCAL=1
@@ -25,9 +24,4 @@ src_compile() {
 		--disable-mtp_up \
 		--disable-pulse
 	cygmake
-}
-
-src_install() {
-	cd ${B}
-	cyginstall
 }
