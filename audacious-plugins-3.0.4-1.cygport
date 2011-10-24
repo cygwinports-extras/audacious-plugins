@@ -2,7 +2,8 @@ DESCRIPTION="Plugins for Audacious music player"
 HOMEPAGE="http://audacious-media-player.org/"
 SRC_URI="http://distfiles.atheme.org/${P}.tar.bz2"
 
-PATCH_URI="2.5-buildsys.patch"
+PATCH_URI="2.5-buildsys.patch
+	   3.0.4-amidi-plug.patch"
 
 NO_AUTOPOINT=1
 NO_ACLOCAL=1
@@ -12,12 +13,10 @@ src_compile() {
 	cygautoreconf
 	lndirs
 	cd ${B}
-	# adplug: causes segfault on exit
 	cygconf \
 		--enable-ipv6 \
-		--disable-adplug \
 		--disable-alsa \
-		--disable-amidiplug \
+		--disable-amidiplug-alsa \
 		--disable-coreaudio \
 		--disable-dockalbumart \
 		--disable-evdevplug \
