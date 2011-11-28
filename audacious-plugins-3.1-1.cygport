@@ -20,7 +20,6 @@ src_compile() {
 		--disable-coreaudio \
 		--disable-dockalbumart \
 		--disable-evdevplug \
-		--disable-mtp_up \
-		--disable-pulse
+		--disable-mtp_up
 	cygmake
 }
