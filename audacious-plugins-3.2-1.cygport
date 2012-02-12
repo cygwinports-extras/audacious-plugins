@@ -1,6 +1,6 @@
 DESCRIPTION="Plugins for Audacious music player"
 HOMEPAGE="http://audacious-media-player.org/"
-SRC_URI="http://distfiles.atheme.org/${P}.tar.bz2"
+SRC_URI="http://distfiles.audacious-media-player.org/${P}.tar.bz2"
 
 PATCH_URI="2.5-buildsys.patch
 	   3.0.4-amidi-plug.patch"
@@ -17,9 +17,6 @@ src_compile() {
 		--enable-ipv6 \
 		--disable-alsa \
 		--disable-amidiplug-alsa \
-		--disable-coreaudio \
-		--disable-dockalbumart \
-		--disable-evdevplug \
 		--disable-mtp_up
 	cygmake
 }
