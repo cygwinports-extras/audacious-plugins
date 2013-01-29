@@ -9,12 +9,6 @@
        {
          GModule * module;
          gchar * (*getapmoduleinfo)( gchar ** , gchar ** , gchar ** , gint * );
-@@ -110,7 +110,7 @@ void i_backend_list_free( GSList * backe
- 
- gint i_backend_load( gchar * module_name )
- {
--  gchar * module_pathfilename = g_strjoin( "" , AMIDIPLUGBACKENDDIR , "/ap-" , module_name , ".so" , NULL );
-+  gchar * module_pathfilename = g_strjoin( "" , AMIDIPLUGBACKENDDIR , "/ap-" , module_name , "."G_MODULE_SUFFIX , NULL );
-   DEBUGMSG( "loading backend '%s'\n" , module_pathfilename );
-   backend.gmodule = g_module_open (module_pathfilename, G_MODULE_BIND_LAZY |
-    G_MODULE_BIND_LOCAL);
+@@ -113,1 +113,1 @@ void i_backend_list_free( GSList * backe
+-    module_pathfilename = g_strjoin ("", AMIDIPLUGBACKENDDIR, "/ap-", module_name, ".so", NULL);
++    module_pathfilename = g_strjoin ("", AMIDIPLUGBACKENDDIR, "/ap-", module_name, "." G_MODULE_SUFFIX, NULL);

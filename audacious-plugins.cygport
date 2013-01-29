@@ -1,0 +1,33 @@
+NAME="audacious-plugins"
+VERSION=3.3.3
+RELEASE=1
+CATEGORY="Audio"
+SUMMARY="GTK audio player, fork of BMP/XMMS (plugins)"
+DESCRIPTION="Audacious is an advanced audio player. It is free, lightweight,
+based on GTK+, runs on Linux and many other *nix platforms and is focused on
+audio quality and supporting a wide range of audio codecs. Audacious is a fork
+of Beep Media Player (BMP), which itself forked from XMMS."
+HOMEPAGE="http://audacious-media-player.org/"
+SRC_URI="http://distfiles.audacious-media-player.org/${P}.tar.bz2"
+
+PATCH_URI="
+	http://www.linuxfromscratch.org/patches/blfs/svn/audacious-plugins-3.3.3-libcdio_v0.90_fixes-1.patch
+	2.5-buildsys.patch
+	3.0.4-amidi-plug.patch
+"
+
+NO_AUTOPOINT=1
+NO_ACLOCAL=1
+
+src_compile() {
+	cd ${S}
+	cygautoreconf
+	lndirs
+	cd ${B}
+	cygconf \
+		--enable-ipv6 \
+		--disable-alsa \
+		--disable-amidiplug-alsa \
+		--disable-mtp_up
+	cygmake
+}
