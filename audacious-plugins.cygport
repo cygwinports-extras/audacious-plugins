@@ -1,5 +1,5 @@
 NAME="audacious-plugins"
-VERSION=3.3.3
+VERSION=3.3.4
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="GTK audio player, fork of BMP/XMMS (plugins)"
@@ -11,7 +11,6 @@ HOMEPAGE="http://audacious-media-player.org/"
 SRC_URI="http://distfiles.audacious-media-player.org/${P}.tar.bz2"
 
 PATCH_URI="
-	http://www.linuxfromscratch.org/patches/blfs/svn/audacious-plugins-3.3.3-libcdio_v0.90_fixes-1.patch
 	2.5-buildsys.patch
 	3.0.4-amidi-plug.patch
 "
@@ -27,7 +26,6 @@ src_compile() {
 	cygconf \
 		--enable-ipv6 \
 		--disable-alsa \
-		--disable-amidiplug-alsa \
-		--disable-mtp_up
+		--disable-amidiplug-alsa
 	cygmake
 }
