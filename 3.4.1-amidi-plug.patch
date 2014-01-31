@@ -1,8 +1,0 @@
---- origsrc/audacious-plugins-3.0.4/src/amidi-plug/i_backend.c	2011-10-20 17:21:19.000000000 -0500
-+++ src/audacious-plugins-3.0.4/src/amidi-plug/i_backend.c	2011-10-23 21:56:46.565747200 -0500
-@@ -59,1 +59,1 @@ GSList * i_backend_list_lookup( void )
--            if (i_str_has_pref_and_suff (backend_directory_entry, "ap-", ".so") == TRUE)
-+            if (i_str_has_pref_and_suff (backend_directory_entry, "ap-", "." G_MODULE_SUFFIX) == TRUE)
-@@ -125,1 +125,1 @@ void i_backend_list_free( GSList * backe
--    SPRINTF (path, AMIDIPLUGBACKENDDIR "/ap-%s.so", module_name);
-+    SPRINTF (path, AMIDIPLUGBACKENDDIR "/ap-%s." G_MODULE_SUFFIX, module_name);

@@ -1,5 +1,5 @@
 NAME="audacious-plugins"
-VERSION=3.4.1
+VERSION=3.4.3
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="GTK audio player, fork of BMP/XMMS (plugins)"
@@ -9,10 +9,8 @@ audio quality and supporting a wide range of audio codecs. Audacious is a fork
 of Beep Media Player (BMP), which itself forked from XMMS."
 HOMEPAGE="http://audacious-media-player.org/"
 SRC_URI="http://distfiles.audacious-media-player.org/${NAME}-${VERSION}.tar.bz2"
-
 PATCH_URI="
 	2.5-buildsys.patch
-	3.4.1-amidi-plug.patch
 "
 
 NO_AUTOPOINT=1
