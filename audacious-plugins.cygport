@@ -1,5 +1,5 @@
 NAME="audacious-plugins"
-VERSION=3.4.3
+VERSION=3.6.1
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="GTK audio player, fork of BMP/XMMS (plugins)"
