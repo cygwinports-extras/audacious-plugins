@@ -1,5 +1,5 @@
 NAME="audacious-plugins"
-VERSION=3.6.2
+VERSION=3.7.2
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="GTK audio player, fork of BMP/XMMS (plugins)"
@@ -24,6 +24,10 @@ src_compile() {
 	cygconf \
 		--enable-ipv6 \
 		--disable-alsa \
-		--disable-amidiplug-alsa
+		--disable-amidiplug-alsa \
+		--disable-aac \
+		--disable-mp3 \
+		--disable-oss4 \
+		--with-ffmpeg=none
 	cygmake
 }
