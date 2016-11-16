@@ -1,5 +1,5 @@
 NAME="audacious-plugins"
-VERSION=3.7.2
+VERSION=3.8
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="GTK audio player, fork of BMP/XMMS (plugins)"
@@ -10,7 +10,8 @@ of Beep Media Player (BMP), which itself forked from XMMS."
 HOMEPAGE="http://audacious-media-player.org/"
 SRC_URI="http://distfiles.audacious-media-player.org/${NAME}-${VERSION}.tar.bz2"
 PATCH_URI="
-	2.5-buildsys.patch
+	3.8-buildsys.patch
+	3.8-waveout.patch
 "
 
 NO_AUTOPOINT=1
@@ -22,11 +23,10 @@ src_compile() {
 	lndirs
 	cd ${B}
 	cygconf \
-		--enable-ipv6 \
 		--disable-alsa \
-		--disable-amidiplug-alsa \
 		--disable-aac \
-		--disable-mp3 \
+		--disable-filewriter_mp3 \
+		--disable-mms \
 		--disable-oss4 \
 		--with-ffmpeg=none
 	cygmake
