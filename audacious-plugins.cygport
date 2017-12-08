@@ -1,6 +1,6 @@
 NAME="audacious-plugins"
-VERSION=3.8.2
-RELEASE=2
+VERSION=3.9
+RELEASE=1
 CATEGORY="Audio"
 SUMMARY="GTK audio player, fork of BMP/XMMS (plugins)"
 DESCRIPTION="Audacious is an advanced audio player. It is free, lightweight,
